@@ -11,11 +11,11 @@ blogPost.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        post: {
+        description: {
             type: DataTypes.STRING,
         },
         date_created: {
@@ -29,7 +29,7 @@ blogPost.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'blogPost',
     }
 );
 
