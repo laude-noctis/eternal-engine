@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { blogPost, User } = require('../models');
+const withAuth = require("../utils/auth")
 
 router.get('/', async (req, res) => {
     try {
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
 
         const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
 
-        res.render('FILL IN LATER', {
+        res.render('homepage', {
             blogposts,
             logged_in: req.session.logged_in
         });
@@ -36,7 +37,7 @@ router.get('/blogpost/:id', async (req, res) => {
 
         const blogpost = blogpostData.get({ plain: true })
 
-        res.render('FILL IN LATER', {
+        res.render('blogpost', {
             ...blogpost,
             logged_in: req.session.logged_in
         });
@@ -45,9 +46,27 @@ router.get('/blogpost/:id', async (req, res) => {
     }
 });
 
+router.get("/profile", withAuth, async (req, res) => {
+    try {
+        const loggedInUser = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ["password"] },
+            include: [{ model: blogPost }], 
+        });
+
+        const user = loggedInUser.get({ plain: true });
+
+        res.render("profile", {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.get('/login', (req, res) => {
     if (!req.session.logged_in) {
-        res.redirect('/dashboard');
+        res.redirect('/profile');
         return;
     }
 
