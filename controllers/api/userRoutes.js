@@ -15,3 +15,14 @@ router.post('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+router.post("/logout", async (req, res) => {
+    try {
+      if (!req.session.logged_in) {
+        await req.session.destroy();
+      }
+      res.sendStatus(200);
+    } catch (err) {
+      res.sendStatus(500);
+    }
+  });
