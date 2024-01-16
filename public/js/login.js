@@ -2,8 +2,8 @@
 const loginForm = async (event) => {
     event.preventDefault();
 
-    const email = document.getElementById("email-login");
-    const password = document.getElementById("password-login");
+    const email = document.getElementById("email-login").value.trim();
+    const password = document.getElementById("password-login").value.trim();
 
     if (email && password) {
         const response = await fetch("/api/users/login", {
@@ -20,15 +20,15 @@ const loginForm = async (event) => {
     };
 };
 
-document.querySelector(".login-form").addEventListener("submit", loginForm);
+document.querySelector("#login-form").addEventListener("submit", loginForm);
 
 // Signup Logic
 const signupForm = async (event) => {
     event.preventDefault();
 
-    const name = document.getElementById("name-signup")
-    const email = document.getElementById("email-signup")
-    const password = document.getElementById("password-signup")
+    const name = document.getElementById("name-signup").value.trim();
+    const email = document.getElementById("email-signup").value.trim();
+    const password = document.getElementById("password-signup").value.trim();
 
     if (name && email && password) {
         const response = await fetch("/api/users", {
