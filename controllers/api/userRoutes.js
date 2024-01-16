@@ -16,13 +16,39 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.post("/login", async (req, res) => {
+    try {
+        const userLogin = await User.findOne({ where: { email: req.body.email } });
+        if (!userLogin) {
+            res.sendStatus(400).json({ message: "Incorrect email or password" });
+            return;
+        }
+
+        const userPassword = await userLogin.checkPassword(req.body.password);
+        if (!userPassword) {
+            res.sendStatus(400).json({ message: "Incorrect email or password" });
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.user_id = userLogin.id;
+            req.session.logged_in = true;
+            res.sendStatus(200).json({ message: "You are now logged in!" });
+        });
+    } catch (err) {
+        res.sendStatus(400).json(err);
+    }
+});
+
 router.post("/logout", async (req, res) => {
     try {
-      if (!req.session.logged_in) {
-        await req.session.destroy();
-      }
-      res.sendStatus(200);
+        if (!req.session.logged_in) {
+            await req.session.destroy();
+        }
+        res.sendStatus(200);
     } catch (err) {
-      res.sendStatus(500);
+        res.sendStatus(500);
     }
-  });
+});
+
+module.exports = router
