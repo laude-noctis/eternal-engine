@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body> 
+<body>
     <div>
         <header>
             <a href="/">The Tech Blog</a>
             <nav>
                 {{#if logged_in}}
-                <a href="/">Home</a>
-                <a href="/dashboard">Dashboard</a>
+                <a href="/homepage">Home</a>
+                {{!-- <a href="/dashboard">Dashboard</a> idk bout this --}}
                 <button id="logout">Logout</button>
                 {{else}}
                 <a href="">Home</a>
@@ -25,7 +25,7 @@
             </nav>
         </header>
         <main>
-            {{!-- {{{ body }}} --}}
+            {{{ body }}}
         </main>
         <footer></footer>
     </div>
