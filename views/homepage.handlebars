@@ -1,10 +1,16 @@
-{{#each blogPosts as |blogPost|}}
 <div>
-    <h2>
-        <a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a>
-    </h2>
-    <p>
-        By: {{blogPost.user.name}} on  {{blogPost.date_created}}
-    </p>
+    <p>testing testing testing 1 2 3 </p>
 </div>
-{{/each}}
+
+<div>
+    {{#each blogPosts as |blogPost|}}
+    <div>
+        <h2>
+            <a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a>
+        </h2>
+        <p>
+            By: {{blogPost.user.name}} on {{blogPost.date_created}}
+        </p>
+    </div>
+    {{/each}}
+</div>
