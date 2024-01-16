@@ -5,7 +5,7 @@ const newBlogPost = async (event) => {
     const description = document.getElementById("post-description");
 
     if (title && description) {
-        const response = await fetch("/api/blogPosts", {
+        const response = await fetch("/api/blogposts", {
             method: "POST",
             body: JSON.stringify({ title, description }),
             headers: { "Content-type": "application/json" }
@@ -26,7 +26,7 @@ const deleteButton = async (event) => {
 
     const deleteBtn = document.querySelector("#delete-button")
 
-    const response = await fetch(`/api/blogPosts/${id}`, {
+    const response = await fetch(`/api/blogposts/${id}`, {
         method: "DELETE",
         body: JSON.stringify({ deleteBtn })
     });
