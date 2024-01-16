@@ -20,8 +20,7 @@ const loginForm = async (event) => {
     };
 };
 
-document.querySelector(".login-form")
-document.addEventListener("submit", loginForm);
+document.querySelector(".login-form").addEventListener("submit", loginForm);
 
 // Signup Logic
 const signupForm = async (event) => {
@@ -46,5 +45,4 @@ const signupForm = async (event) => {
     };
 };
 
-document.querySelector(".signup-form");
-document.addEventListener("submit", signupForm)
+document.querySelector(".signup-form").addEventListener("submit", signupForm);
