@@ -19,16 +19,15 @@ const newBlogPost = async (event) => {
     }
 };
 
-document.querySelector("#create-post").addEventListener("submit", newBlogPost);
+document.querySelector("#create-post").addEventListener("click", newBlogPost);
 
 const deleteButton = async (event) => {
     event.preventDefault();
 
-    const deleteBtn = document.querySelector("#delete-button")
+    const id = document.querySelector("#delete-button")
 
     const response = await fetch(`/api/blogposts/${id}`, {
         method: "DELETE",
-        body: JSON.stringify({ deleteBtn })
     });
 
     if (response.ok) {
@@ -38,4 +37,4 @@ const deleteButton = async (event) => {
     }
 }
 
-document.querySelector("#delete-button").addEventListener("submit", deleteButton);
+document.querySelector("#delete-button").addEventListener("click", deleteButton);
