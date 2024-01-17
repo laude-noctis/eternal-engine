@@ -37,4 +37,4 @@ const deleteButton = async (event) => {
     }
 }
 
-document.querySelector("#delete-button").addEventListener("click", deleteButton);
+document.querySelector(".previous-posts").addEventListener("click", deleteButton);
