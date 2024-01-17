@@ -1,8 +1,8 @@
 const newBlogPost = async (event) => {
     event.preventDefault();
 
-    const title = document.getElementById("post-title");
-    const description = document.getElementById("post-description");
+    const title = document.getElementById("post-title").value.trim();
+    const description = document.getElementById("post-description").value.trim();
 
     if (title && description) {
         const response = await fetch("/api/blogposts", {

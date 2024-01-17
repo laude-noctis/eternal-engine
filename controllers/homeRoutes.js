@@ -25,8 +25,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/blogposts/:id', async (req, res) => {
+    console.log("blogpost id route")
     try {
-        const blogpostData = await blogPost.findbyPk(req.params.id, {
+        const blogpostData = await blogPost.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -42,6 +43,7 @@ router.get('/blogposts/:id', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.error(err)
         res.status(500).json(err)
     }
 });

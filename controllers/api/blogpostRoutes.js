@@ -3,6 +3,7 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
+    console.log("/api/blogposts")
     try {
         const newBlogPost = await blogPost.create({
             ...req.body,
@@ -16,6 +17,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 router.delete("/:id", withAuth, async (req, res) => {
+    console.log("blogpost delete route")
     try {
         const deleteBlogPost = await blogPost.destroy({
             where: { id: req.params.id }
