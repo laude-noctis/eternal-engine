@@ -22,18 +22,18 @@ const newBlogPost = async (event) => {
 document.querySelector("#create-post").addEventListener("click", newBlogPost);
 
 const deleteButton = async (event) => {
-    event.preventDefault();
+    if (event.target.hasAttribute("data-id")) {
+        const id = event.target.getAttribute("data-id");
 
-    const id = document.querySelector("#delete-button")
+        const response = await fetch(`/api/blogposts/${id}`, {
+            method: "DELETE",
+        });
 
-    const response = await fetch(`/api/blogposts/${id}`, {
-        method: "DELETE",
-    });
-
-    if (response.ok) {
-        document.location.replace("/profile");
-    } else {
-        alert("Failed to delete post :(")
+        if (response.ok) {
+            document.location.replace("/profile");
+        } else {
+            alert("Failed to delete post :(")
+        }
     }
 }
 
