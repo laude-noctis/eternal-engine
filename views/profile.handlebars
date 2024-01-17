@@ -22,12 +22,14 @@
     </div>
 
     {{#if blogPosts.length}}
-    <div class="previous-posts">
+    <div>
         <h3>Previous Posts</h3>
 
         {{#each blogPosts as |blogPost|}}
         <div>
             <h4><a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a></h4>
+        </div>
+        <div>
             <button id="delete-button" data-id="{{blogPost.id}}">DELETE</button>
         </div>
         {{/each}}

@@ -35,6 +35,6 @@ const deleteButton = async (event) => {
             alert("Failed to delete post :(")
         }
     }
-}
+};
 
-document.querySelector(".previous-posts").addEventListener("click", deleteButton);
+document.querySelector("#delete-button").addEventListener("click", deleteButton);
