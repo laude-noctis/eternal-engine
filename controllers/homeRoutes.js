@@ -48,7 +48,7 @@ router.get('/blogposts/:id', async (req, res) => {
     }
 });
 
-router.get("/profile", withAuth, async (req, res) => {
+router.get("/dashbaord", withAuth, async (req, res) => {
     try {
         const loggedInUser = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
@@ -57,7 +57,7 @@ router.get("/profile", withAuth, async (req, res) => {
 
         const user = loggedInUser.get({ plain: true });
 
-        res.render("profile", {
+        res.render("dashboard", {
             ...user,
             logged_in: true
         });
@@ -76,7 +76,7 @@ router.get("/signup", async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/profile');
+        res.redirect('/dashboard');
         return;
     }
 
