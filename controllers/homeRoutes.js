@@ -69,7 +69,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 })
 
-router.get("/update", async (req, res) => {
+router.get("/update", withAuth, async (req, res) => {
     try {
         res.render("update")
     } catch {
@@ -78,7 +78,7 @@ router.get("/update", async (req, res) => {
     }
 })
 
-router.get("/new-post", async (req, res) => {
+router.get("/new-post", withAuth, async (req, res) => {
     try {
         res.render('new-post')
     } catch {
