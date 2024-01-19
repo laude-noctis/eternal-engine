@@ -1,4 +1,8 @@
+const newPost = () => {
+    document.location.replace("/new-post")
+}
 
+document.querySelector("#new-post").addEventListener("click", newPost)
 
 const deleteButton = async (event) => {
     if (event.target.hasAttribute("data-id")) {

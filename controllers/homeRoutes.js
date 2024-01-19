@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+        console.error(err)
     }
 });
 
@@ -45,10 +46,11 @@ router.get('/blogposts/:id', async (req, res) => {
     } catch (err) {
         console.error(err)
         res.status(500).json(err)
+        console.error(err)
     }
 });
 
-router.get("/dashbaord", withAuth, async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
     try {
         const loggedInUser = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
@@ -63,6 +65,16 @@ router.get("/dashbaord", withAuth, async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+        console.error(err)
+    }
+})
+
+router.get("/new-post", async (req, res) => {
+    try {
+        res.render('new-post')
+    } catch {
+        res.status(500).json(err)
+        console.error(err)
     }
 })
 
@@ -71,6 +83,7 @@ router.get("/signup", async (req, res) => {
         res.render('signup')
     } catch (err) {
         res.status(500).json(err)
+        console.error(err)
     }
 })
 
