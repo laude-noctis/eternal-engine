@@ -69,6 +69,15 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 })
 
+router.get("/update", async (req, res) => {
+    try {
+        res.render("update")
+    } catch {
+        console.error(err)
+        res.status(500).json(err)
+    }
+})
+
 router.get("/new-post", async (req, res) => {
     try {
         res.render('new-post')
