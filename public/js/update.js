@@ -1,4 +1,5 @@
 const updatePost = async (event) => {
+    event.preventDefault();
     if (event.target.hasAttribute("data-id")) {
         const id = event.target.getAttribute("data-id")
 
@@ -21,3 +22,4 @@ const updatePost = async (event) => {
 }
 
 document.querySelector("#update-post").addEventListener("click", updatePost)
+
