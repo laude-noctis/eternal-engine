@@ -10,7 +10,7 @@ const updatePost = async (event) => {
             body: JSON.stringify({ title, description }),
             headers: { "Content-type": "application/json" }
         });
-
+        
         if (response.ok) {
             document.location.replace(`blogposts/${id}`)
         } else (err) => {
