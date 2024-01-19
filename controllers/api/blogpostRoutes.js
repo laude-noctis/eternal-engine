@@ -42,7 +42,7 @@ router.put("/update/:id", withAuth, async (req, res) => {
         return res.status(404).json({ error: "Post not found" });
       }
 
-      res.render("blogposts/:id")
+      res.render("blogpost")
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: "Server error" });

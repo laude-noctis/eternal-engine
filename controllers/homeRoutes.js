@@ -71,7 +71,16 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 router.get("/update", withAuth, async (req, res) => {
     try {
-        res.render("update")
+        const loggedInUser = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ["password"] }, 
+        });
+
+        const user = loggedInUser.get({ plain: true });
+
+        res.render("update", {
+            ...user,
+            logged_in: true
+        });
     } catch {
         console.error(err)
         res.status(500).json(err)
@@ -80,7 +89,16 @@ router.get("/update", withAuth, async (req, res) => {
 
 router.get("/new-post", withAuth, async (req, res) => {
     try {
-        res.render('new-post')
+        const loggedInUser = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ["password"] }, 
+        });
+
+        const user = loggedInUser.get({ plain: true });
+
+        res.render("new-post", {
+            ...user,
+            logged_in: true
+        });
     } catch {
         res.status(500).json(err)
         console.error(err)
