@@ -69,16 +69,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 })
 
-router.get("/update", withAuth, async (req, res) => {
+router.get("/update/:id", withAuth, async (req, res) => {
     try {
-        const loggedInUser = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ["password"] }, 
-        });
-
-        const user = loggedInUser.get({ plain: true });
+        const blogpostData = await blogPost.findByPk(req.params.id);
 
         res.render("update", {
-            ...user,
+            ...blogpostData,
             logged_in: true
         });
     } catch {
