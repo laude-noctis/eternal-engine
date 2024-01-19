@@ -1,6 +1,6 @@
 const logoutHandler = async (event) => {
     event.preventDefault();
-    console.log("hello there")
+
     const response = await fetch("/logout", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
