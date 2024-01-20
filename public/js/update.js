@@ -7,7 +7,7 @@ const updatePost = async (event) => {
         const description = document.getElementById("post-description").value.trim();
 
         const response = await fetch(`/api/blogposts/update/${id}`, {
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify({ title, description }),
             headers: { "Content-type": "application/json" }
         });
