@@ -1,17 +1,14 @@
 [
     {
-        "name": "Percy",
-        "email": "percyblue@gmail.com",
+        "username": "percyblue",
         "password": "password123"
     },
     {
-        "name": "Annabeth",
-        "email": "annabethbooks@gmail.com",
+        "username": "annabethbooks",
         "password": "123password"
     },
     {
-        "name": "Grover",
-        "email": "coolguy12@gmail.com",
+        "username": "coolguy12",
         "password": "pass123word"
     }
 ]
