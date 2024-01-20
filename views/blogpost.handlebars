@@ -1,14 +1,16 @@
 <div>
-    <a href="/update/{{id}}"><button id="edit-post">Edit Post</button></a>
-</div>
-<div>
-    <p>Posted By: {{user.username}}</p>
-    <p>{{date_created}}</p>
-    <p>{{title}}</p>
-    <p>{{description}}</p>
-</div>
-<div>
-    <button id="delete-button" data-id="{{id}}">DELETE</button>
+    <div>
+        <a href="/update/{{id}}"><button id="edit-post">Edit Post</button></a>
+    </div>
+    <div>
+        <button id="delete-button" data-id="{{id}}">DELETE</button>
+    </div>
+    <div>
+        <p>Posted By: {{user.username}}</p>
+        <p>{{date_created}}</p>
+        <p>{{title}}</p>
+        <p>{{description}}</p>
+    </div>
 </div>
 
 <script src="/js/delete.js"></script>

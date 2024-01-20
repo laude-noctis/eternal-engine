@@ -20,7 +20,7 @@ Comments.init(
             allowNull: false,
             defaultValue: DataTypes.DATE,
         },
-        username: {
+        user_id: {
             type: DataTypes.STRING,
             references: {
                 model: "user",
