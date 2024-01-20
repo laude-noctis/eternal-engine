@@ -7,9 +7,13 @@
         <div>
             {{#each blogposts}}
             <div class="blog-post">
+                {{#if ../logged_in}}
                 <h2><a href="/blogposts/{{id}}">{{title}}</a></h2>
+                {{else}}
+                <h2>{{title}}</h2>
+                {{/if}}
                 <p>{{description}}</p>
-                <p>Posted by: {{username}}</p>
+                <p>Posted by: {{user.username}}</p>
                 <p>Date created: {{format_date date_created}}</p>
             </div>
             {{/each}}
