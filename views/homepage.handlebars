@@ -7,10 +7,10 @@
         <div>
             {{#each blogposts}}
             <div class="blog-post">
-                <h2>{{title}}</h2>
+                <h2><a href="/blogposts/{{id}}">{{title}}</a></h2>
                 <p>{{description}}</p>
                 <p>Posted by: {{name}}</p>
-                <p>Date created: {{createdAt}}</p>
+                <p>Date created: {{format_date date_created}}</p>
             </div>
             {{/each}}
         </div>

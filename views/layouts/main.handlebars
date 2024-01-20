@@ -11,7 +11,6 @@
 <body>
     <div>
         <header>
-            <a href="/">The Tech Blog</a>
             <nav>
                 {{#if logged_in}}
                 <a href="/">Home</a>
@@ -23,6 +22,7 @@
                 <a href="/login">Login</a>
                 {{/if}}
             </nav>
+            <a href="/">The Tech Blog</a>
         </header>
         <main>
             {{{ body }}}
