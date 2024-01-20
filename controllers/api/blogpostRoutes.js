@@ -28,24 +28,22 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
 });
 
-router.put("/update/:id", withAuth, async (req, res) => {
+router.post(`/update/:id`, withAuth, async (req, res) => {
     console.log("updating blogpost route");
     try {
-      const currentPost = await blogPost.update(req.body, {
-        where: {
-            id: req.params.id
+        const currentPost = await blogPost.update(req.body, {
+            where: { id: req.params.id }
+        });
+        //   console.log(currentPost)
+
+        if (!currentPost) {
+            return res.status(404).json({ error: "Post not found" });
         }
-      });
-      console.log(currentPost)
 
-      if (!currentPost) {
-        return res.status(404).json({ error: "Post not found" });
-      }
-
-      res.render("blogpost")
+        res.render("blogpost")
     } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "Server error" });
+        console.error(err);
+        res.status(500).json({ error: "Server error" });
     }
 });
 
