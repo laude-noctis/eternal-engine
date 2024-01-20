@@ -4,13 +4,15 @@
     </div>
 
     <div>
-        {{#each blogPosts as |blogPost|}}
         <div>
-            <h2>
-                <a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a>
-            </h2>
+            {{#each blogposts}}
+            <div class="blog-post">
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <p>Posted by: {{name}}</p>
+                <p>Date created: {{createdAt}}</p>
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
-
 </div>
