@@ -3,14 +3,14 @@ const commentBtn = async (event) => {
 
     const comment = document.querySelector("#comment").value.trim();
 
-    const response = await fetch("/fill in later", {
+    const response = await fetch("/api/comments", {
         method: "POST",
         body: JSON.stringify({ comment }),
         headers: { "Content-type": "application.json" },
     })
 
     if (response.ok) {
-        document.location.replace("/fill in later")
+        document.location.replace("/blogposts/:id")
     } else (err) => {
         console.error(err)
         alert(response.statusText);
