@@ -7,10 +7,18 @@
     </div>
     <div>
         <p>Posted By: {{user.username}}</p>
-        <p>{{date_created}}</p>
+        <p>{{format_date date_created}}</p>
         <p>{{title}}</p>
         <p>{{description}}</p>
     </div>
 </div>
+<div>
+    <form id="comment-form">
+        <label for="comment-on-blogposts">Leave a Comment:</label>
+        <input type="text" id="comment" />
+    </form>
+    <button type="submit" id="comment-button">Comment</button>
+</div>
 
 <script src="/js/delete.js"></script>
+<script src="/js/comment.js"></script>
