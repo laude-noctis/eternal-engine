@@ -1,21 +1,23 @@
 const commentBtn = async (event) => {
-    event.preventDefault();
+    if (event.target.hasAttribute("data-id")) {
+        const id = event.target.getAttribute("data-id");
 
-    const comment = document.getElementById("comment").value.trim();
-    console.log(comment)
-    if (comment) {
-        const response = await fetch("/api/comments", {
-            method: "POST",
-            body: JSON.stringify({ comment }),
-            headers: { "Content-type": "application/json" },
-        })
+        const comment = document.getElementById("comment").value.trim();
 
-        if (response.ok) {
-            document.location.replace("/blogposts/:id")
-        } else (err) => {
-            console.error(err)
-            alert(response.statusText);
-        };
+        if (comment) {
+            const response = await fetch("/api/comments", {
+                method: "POST",
+                body: JSON.stringify({ comment }),
+                headers: { "Content-type": "application/json" },
+            })
+
+            if (response.ok) {
+                document.location.replace(`/blogposts/${id}`)
+            } else (err) => {
+                console.error(err)
+                alert(response.statusText);
+            };
+        }
     }
 }
 
