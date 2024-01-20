@@ -74,7 +74,9 @@ router.get("/update/:id", withAuth, async (req, res) => {
         const blogpostData = await blogPost.findByPk(req.params.id);
 
         res.render("update", {
-            ...blogpostData,
+            title: blogpostData.title,
+            description: blogpostData.description,
+            id: blogpostData.id,
             logged_in: true
         });
     } catch {
