@@ -34,12 +34,12 @@ router.put(`/update/:id`, withAuth, async (req, res) => {
         const currentPost = await blogPost.update(req.body, {
             where: { id: req.params.id }
         });
-        //   console.log(currentPost)
-
+        console.log("middle")
         if (!currentPost) {
             return res.status(404).json({ error: "Post not found" });
         }
-
+        
+        console.log("before render")
         res.render("blogpost")
     } catch (err) {
         console.error(err);
