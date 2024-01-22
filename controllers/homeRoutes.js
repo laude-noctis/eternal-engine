@@ -42,20 +42,8 @@ router.get('/blogposts/:id', async (req, res) => {
         });
         const blogpost = blogpostData.get({ plain: true })
 
-        const commentsData = await Comments.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        });
-        console.log(commentsData)
-        const comments = commentsData.get({ plain: true });
-
         res.render('blogpost', {
             ...blogpost,
-            comments,
             logged_in: req.session.logged_in
         });
     } catch (err) {

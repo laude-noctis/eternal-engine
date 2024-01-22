@@ -13,10 +13,10 @@
     </div>
 </div>
 <div>
-    <p>
-        {{comments}}
-    </p>
-</div>
+    {{#each comments as |blogComment|}}
+    <h4>{{blogComment.comment}}</h4>
+    {{/each}}
+    </div>
 <div>
     <form id="comment-form">
         <label for="comment">Leave a Comment:</label>
