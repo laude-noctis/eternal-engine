@@ -42,7 +42,7 @@ router.get('/blogposts/:id', async (req, res) => {
         });
 
         const blogpost = blogpostData.get({ plain: true })
-        console.log("blogpost", blogpost)
+        
         res.render('blogpost', {
             ...blogpost,
             logged_in: req.session.logged_in
@@ -76,7 +76,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 router.get("/update/:id", withAuth, async (req, res) => {
     try {
         const blogpostData = await blogPost.findByPk(req.params.id);
-        console.log("blogpostData", blogpostData)
+    
         res.render("update", {
             title: blogpostData.title,
             description: blogpostData.description,

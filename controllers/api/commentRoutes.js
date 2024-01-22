@@ -11,6 +11,7 @@ router.post("/", withAuth, async (req, res) => {
         });
 
         res.status(200).json(newComment)
+        res.render("blogpost")
     } catch (err) {
         console.error(err)
         res.status(500).json(err)
