@@ -1,9 +1,9 @@
 const commentBtn = async (event) => {
     if (event.target.hasAttribute("data-id")) {
-        let id = event.target.getAttribute("data-id");
+        const id = event.target.getAttribute("data-id");
 
         const comment = document.getElementById("comment").value.trim();
-        let blogpost_id = id;
+        const blogpost_id = id;
         if (comment) {
             const response = await fetch("/api/comments", {
                 method: "POST",
