@@ -9,12 +9,12 @@ const commentBtn = async (event) => {
                 method: "POST",
                 body: JSON.stringify({ comment }),
                 headers: { "Content-type": "application/json" },
-            })
+            });
 
             if (response.ok) {
-                document.location.replace(`/blogposts/${id}`)
+                document.location.replace(`/blogposts/${id}`);
             } else (err) => {
-                console.error(err)
+                console.error(err);
                 alert(response.statusText);
             };
         }

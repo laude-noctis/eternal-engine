@@ -10,9 +10,6 @@ router.post("/", withAuth, async (req, res) => {
             user_id: req.session.user_id,
         });
 
-        res.render('blogpost', {
-            newComment
-        })
         res.status(200).json(newComment)
     } catch (err) {
         console.error(err)
