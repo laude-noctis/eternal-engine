@@ -32,7 +32,7 @@ router.get('/blogposts/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['username', 'id'],
                 },
                 {
                     model: Comments,
@@ -42,9 +42,12 @@ router.get('/blogposts/:id', async (req, res) => {
         });
         const blogpost = blogpostData.get({ plain: true })
 
+        const isCurrentUser = req.session.user_id === blogpost.user_id;
+
         res.render('blogpost', {
             ...blogpost,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            isCurrentUser: isCurrentUser,
         });
     } catch (err) {
         console.error(err)

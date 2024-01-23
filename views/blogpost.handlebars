@@ -1,10 +1,12 @@
 <div>
+    {{#if isCurrentUser}}
     <div>
         <a href="/update/{{id}}"><button id="edit-post">Edit Post</button></a>
     </div>
     <div>
         <button id="delete-button" data-id="{{id}}">DELETE</button>
     </div>
+    {{/if}}
     <div>
         <p>Posted By: {{user.username}}</p>
         <p>{{format_date date_created}}</p>
@@ -16,7 +18,7 @@
     {{#each comments as |blogComment|}}
     <h4>{{blogComment.comment}}</h4>
     {{/each}}
-    </div>
+</div>
 <div>
     <form id="comment-form">
         <label for="comment">Leave a Comment:</label>
