@@ -1,5 +1,10 @@
 * {
     background-color: white;
+    font-family: "Merriweather", serif;
+}
+
+.no-button {
+    border: none;
 }
 
 #tech-blog {
@@ -8,50 +13,53 @@
     text-decoration: none;
     font-size: 36px;
     margin-left: 15px;
+    color: black;
 }
 
-header nav a {
+header nav a,
+header nav button {
     font-family: "Merriweather", serif;
     font-style: bold;
     text-decoration: none;
     font-size: 36px;
     margin: 3px 15px;
+    color: black;
 }
 
-.blog-post {
-    outline: 3px solid black;
-    height: 180px;
-    width: 1000px;
-    margin-top: 50px;
+.filler {
+    height: 25px;
 }
 
-.blog-post-space {
-    background-color: rgb(91, 207, 207);
+.card-body {
+    border: 5px darkcyan solid;
+    padding: 0px;
 }
 
-.blog-post-user {
-    font-size: 20px;
+.card-title,
+.card-subtitle {
+    /* background: rgb(24, 223, 223); */
+    text-decoration: none;
+    padding: 6px;
 }
 
-.blog-post-title-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(91, 207, 207);
-    padding: 10px;
+.card-text {
+    text-decoration: none;
+    padding: 12px;
+    height: 130px;
 }
 
-.blog-post-title,
-.blog-post-info {
-    display: inline;
-    margin-top: 12px;
-    background-color: rgb(91, 207, 207);
+h3 {
+    font-size: 14px;
 }
 
-.blog-post-desc {
-    background-color: rgb(129, 196, 196);
-    height: 100px;
-    width: 950px;
+.description {
+    font-size: 22px;
+}
+
+#new-post {
+    background-color: rgb(112, 25, 173);
+    color: white;
+    border-radius: 10px;
 }
 
 footer {

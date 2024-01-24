@@ -1,16 +1,14 @@
-<div>
+<div class="container">
     <div>
         <h2>Welcome, {{username}}</h2>
         <a href="/new-post"><button id="new-post">+New Post</button></a>
     </div>
-
+    <div class="filler"></div>
     <div>
         {{#if blogPosts.length}}
         <div>
-            <h3>Previous Posts</h3>
-
             {{#each blogPosts as |blogPost|}}
-            <div>
+            <div class="container">
                 <h4><a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a></h4>
             </div>
             {{/each}}

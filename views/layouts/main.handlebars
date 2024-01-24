@@ -16,16 +16,20 @@
 
 <body>
     <div>
-        <header>
-            <nav>
+        <header class="container-fluid">
+            <nav class="navbar sticky-top bg-body-tertiary">
                 {{#if logged_in}}
-                <a href="/">Home</a>
-                <a href="/dashboard">Dashboard</a>
-                <button id="logout">Logout</button>
+                <div class="container-fluid">
+                    <a href="/">Home</a>
+                    <a href="/dashboard">Dashboard</a>
+                    <button class="no-button" id="logout">Logout</button>
+                </div>
                 {{else}}
-                <a href="/">Home</a>
-                <a href="/dashboard">Dashboard</a>
-                <a href="/login">Login</a>
+                <div class="container-fluid">
+                    <a href="/">Home</a>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/login">Login</a>
+                </div>
                 {{/if}}
             </nav>
             <a href="/" id="tech-blog">The Tech Blog</a>

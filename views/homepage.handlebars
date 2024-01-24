@@ -1,25 +1,21 @@
 <div>
     <div>
         {{#each blogposts}}
-        <div class="blog-post container-lg">
+        <div class="container">
             {{#if ../logged_in}}
-            <div class="container-md blog-post-space">
-                <h2 class="blog-post-title"><a href="/blogposts/{{id}}">{{title}}</a></h2>
-                <h2 class="blog-post-info blog-post-user">Posted by: {{user.username}} on {{format_date date_created}}
-                </h2>
+            <div class="card-body">
+                <h2 class="card-title"><a href="/blogposts/{{id}}">{{title}}</a></h2>
+                <h3 class="card-subtitle mb-2 text-body-secondary">Posted by: {{user.username}} on {{format_date date_created}}</h3>
+                <p class="card-text description">{{description}}</p>
             </div>
             {{else}}
-            <div class="container-md blog-post-space">
-                <div class="blog-post-title-info">
-                    <h2 class="blog-post-title">{{title}}</h2>
-                    <h2 class="blog-post-info blog-post-user">Posted by: {{user.username}} on {{format_date date_created}}
-                    </h2>
-                </div>
+            <div class="card-body">
+                <h2 class="card-title">{{title}}</h2>
+                <h3 class="card-subtitle mb-2 text-body-secondary">Posted by: {{user.username}} on {{format_date date_created}}</h3>
+                <p class="card-text description">{{description}}</p>
             </div>
+            <div class="filler"></div>
             {{/if}}
-            <div class="container-md blog-post-desc">
-                <p class="blog-post-desc">{{description}}</p>
-            </div>
         </div>
         {{/each}}
     </div>
