@@ -1,8 +1,10 @@
 const updatePost = async (event) => {
     event.preventDefault();
     if (event.target.hasAttribute("data-id")) {
+
         const id = event.target.getAttribute("data-id")
         console.log(id)
+        
         const title = document.getElementById("post-title").value.trim();
         const description = document.getElementById("post-description").value.trim();
 
