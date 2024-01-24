@@ -20,14 +20,40 @@ header nav a {
 
 .blog-post {
     outline: 3px solid black;
+    height: 180px;
+    width: 1000px;
+    margin-top: 50px;
+}
+
+.blog-post-space {
+    background-color: rgb(91, 207, 207);
 }
 
 .blog-post-user {
     font-size: 20px;
 }
 
+.blog-post-title-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(91, 207, 207);
+    padding: 10px;
+}
+
 .blog-post-title,
 .blog-post-info {
-  display: inline;
-  margin-right: 100px; /* Adjust the margin as needed */
+    display: inline;
+    margin-top: 12px;
+    background-color: rgb(91, 207, 207);
+}
+
+.blog-post-desc {
+    background-color: rgb(129, 196, 196);
+    height: 100px;
+    width: 950px;
+}
+
+footer {
+    height: 100px;
 }

@@ -3,20 +3,22 @@
         {{#each blogposts}}
         <div class="blog-post container-lg">
             {{#if ../logged_in}}
-            <div class="container-md">
+            <div class="container-md blog-post-space">
                 <h2 class="blog-post-title"><a href="/blogposts/{{id}}">{{title}}</a></h2>
                 <h2 class="blog-post-info blog-post-user">Posted by: {{user.username}} on {{format_date date_created}}
                 </h2>
             </div>
             {{else}}
-            <div class="container-md">
-                <h2 class="blog-post-title">{{title}}</h2>
-                <h2 class="blog-post-info blog-post-user">Posted by: {{user.username}} on {{format_date date_created}}
-                </h2>
+            <div class="container-md blog-post-space">
+                <div class="blog-post-title-info">
+                    <h2 class="blog-post-title">{{title}}</h2>
+                    <h2 class="blog-post-info blog-post-user">Posted by: {{user.username}} on {{format_date date_created}}
+                    </h2>
+                </div>
             </div>
             {{/if}}
-            <div class="container-md">
-                <p>{{description}}</p>
+            <div class="container-md blog-post-desc">
+                <p class="blog-post-desc">{{description}}</p>
             </div>
         </div>
         {{/each}}
