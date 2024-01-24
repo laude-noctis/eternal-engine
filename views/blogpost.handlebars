@@ -17,7 +17,7 @@
 <div>
     {{#each comments as |blogComment|}}
     <p>{{blogComment.comment}}</p>
-    <p>Commented by: {{get_username blogComment.user_id}} on {{format_date date_created}}</p>
+    <p>Commented by: {{blogComment.user.username}} on {{format_date date_created}}</p>
     {{/each}}
 </div>
 <div>
