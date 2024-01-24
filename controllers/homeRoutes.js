@@ -36,14 +36,14 @@ router.get('/blogposts/:id', async (req, res) => {
                 },
                 {
                     model: Comments,
-                    attributes: ["comment"]
+                    attributes: ["comment", "user_id"]
                 },
             ],
         });
         const blogpost = blogpostData.get({ plain: true })
 
         const isCurrentUser = req.session.user_id === blogpost.user_id;
-
+        
         res.render('blogpost', {
             ...blogpost,
             logged_in: req.session.logged_in,
@@ -52,7 +52,6 @@ router.get('/blogposts/:id', async (req, res) => {
     } catch (err) {
         console.error(err)
         res.status(500).json(err)
-        console.error(err)
     }
 });
 

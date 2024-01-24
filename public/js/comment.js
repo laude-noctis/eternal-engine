@@ -4,6 +4,7 @@ const commentBtn = async (event) => {
 
         const comment = document.getElementById("comment").value.trim();
         const blogpost_id = id;
+        
         if (comment) {
             const response = await fetch("/api/comments", {
                 method: "POST",
