@@ -18,6 +18,11 @@
 
 header {
     background-color: darkcyan;
+    outline: hotpink 3px solid;
+}
+
+nav {
+    outline: red 3px solid;
 }
 
 header nav a,
