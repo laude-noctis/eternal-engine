@@ -1,31 +1,49 @@
 <div>
-    {{#if isCurrentUser}}
-    <div>
-        <a href="/update/{{id}}"><button id="edit-post">Edit Post</button></a>
+    <div class="container user-btns">
+        {{#if isCurrentUser}}
+        <div>
+            <a href="/update/{{id}}"><button id="edit-post">Edit Post</button></a>
+        </div>
+        <div>
+            <button id="delete-button" data-id="{{id}}">DELETE</button>
+        </div>
+        {{/if}}
     </div>
-    <div>
-        <button id="delete-button" data-id="{{id}}">DELETE</button>
+
+    <div class="container">
+        <div class="card-body">
+            <h2 class="card-title">{{title}}</h2>
+            <h3 class="card-subtitle mb-2">Posted by: {{user.username}} on {{format_date date_created}}</h3>
+            <p class="card-text description">{{description}}</p>
+        </div>
     </div>
-    {{/if}}
-    <div>
-        <p>Posted By: {{user.username}}</p>
-        <p>{{format_date date_created}}</p>
-        <p>{{title}}</p>
-        <p>{{description}}</p>
+
+    <div class="container">
+        <div class="card-body">
+            {{#each comments as |blogComment|}}
+            <h2 class="card-title">{{blogComment.user.username}}</h2>
+            <h3 class="card-subtitle mb-2">{{format_date date_created}}</h3>
+            <p class="card-text description">{{blogComment.comment}}</p>
+            {{/each}}
+        </div>
     </div>
-</div>
-<div>
-    {{#each comments as |blogComment|}}
-    <p>{{blogComment.comment}}</p>
-    <p>Commented by: {{blogComment.user.username}} on {{format_date date_created}}</p>
-    {{/each}}
-</div>
-<div>
-    <form id="comment-form">
-        <label for="comment">Leave a Comment:</label>
-        <input type="text" id="comment" />
-    </form>
-    <button type="submit" id="comment-button" data-id="{{id}}">Comment</button>
+
+    <div class="container">
+        <div class="card-body">
+
+            <form id="comment-form">
+                <label class="form-label col-12 card-title" for="comment">Leave a Comment:</label>
+                <textarea class="form-control card-text description" type="text" id="comment"></textarea>
+            </form>
+
+            <div class="d-grid gap-2">
+                <button class="comment-btn" type="submit" id="comment-button" data-id="{{id}}">Comment</button>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 <script src="/js/delete.js"></script>

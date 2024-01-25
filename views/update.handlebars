@@ -4,6 +4,7 @@
             <label for="post-title" class="form-label">Post Title:</label>
             <input type="text" id="post-title" class="form-control" value="{{title}}" />
         </div>
+        
         <div>
             <label for="post-description" class="form-label">Description:</label>
             <textarea class="form-control" type="text" id="post-description" value="{{description}}"
@@ -14,7 +15,7 @@
             const textarea = document.getElementById('post-description');
             textarea.value = "{{description}}";
         </script>
-        <div class="filler"></div>
+
         <div class="d-grid gap-2">
             <button class="btn btn-outline-dark" type="submit" id="update-post" data-id="{{id}}">Update Post</button>
         </div>

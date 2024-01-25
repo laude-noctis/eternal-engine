@@ -5,16 +5,15 @@
             {{#if ../logged_in}}
             <div class="card-body">
                 <h2 class="card-title"><a href="/blogposts/{{id}}">{{title}}</a></h2>
-                <h3 class="card-subtitle mb-2 text-body-secondary">Posted by: {{user.username}} on {{format_date date_created}}</h3>
+                <h3 class="card-subtitle mb-2">Posted by: {{user.username}} on {{format_date date_created}}</h3>
                 <p class="card-text description">{{description}}</p>
             </div>
             {{else}}
             <div class="card-body">
                 <h2 class="card-title">{{title}}</h2>
-                <h3 class="card-subtitle mb-2 text-body-secondary">Posted by: {{user.username}} on {{format_date date_created}}</h3>
+                <h3 class="card-subtitle mb-2">Posted by: {{user.username}} on {{format_date date_created}}</h3>
                 <p class="card-text description">{{description}}</p>
             </div>
-            <div class="filler"></div>
             {{/if}}
         </div>
         {{/each}}

@@ -26,19 +26,25 @@ header nav button {
     color: black;
 }
 
-.filler {
-    height: 25px;
-}
-
 .card-body {
     border: 5px darkcyan solid;
     padding: 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 .card-title,
 .card-subtitle {
-    /* background: rgb(24, 223, 223); */
+    background-color: darkcyan;
+    color: lightgray;
     text-decoration: none;
+    padding: 6px;
+}
+
+.comment-btn {
+    background-color: darkcyan;
+    color: lightgray;
+    text-decoration: none;
+    border: none;
     padding: 6px;
 }
 
@@ -53,7 +59,7 @@ h3 {
 }
 
 .description {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 #new-post {
