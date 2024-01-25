@@ -58,6 +58,12 @@ header nav button {
     color: black;
 }
 
+.previous-links {
+    text-decoration: none;
+    color: black;
+}
+
+.previous-links:hover,
 .blogpost-link:hover {
     color: lightpink;
 }
@@ -90,6 +96,20 @@ h3 {
     text-align: center;
 }
 
+.submit-btn {
+    margin-bottom: 12px;
+    background-color: darkcyan;
+    color: lightgray;
+    border-radius: 8px;
+    border-color: black;
+}
+
+.comment-btn:hover,
+.submit-btn:hover {
+    background-color: rgb(0, 180, 180);
+    color: black;
+}
+
 .users-btns {
     display: inline-flex;
     align-items: end;
@@ -99,22 +119,8 @@ h3 {
     background-color: lightpink;
 }
 
-.submit-btn {
-    margin-bottom: 12px;
-    background-color: darkcyan;
-    color: lightgray;
-    border-radius: 8px;
-    border-color: black;
-}
-
-.submit-btn:hover {
-    background-color: rgb(0, 180, 180);
-    color: black;
-}
-
 #new-post,
-.instead-btn,
-.instead-btn:hover {
+.instead-btn {
     border-radius: 8px;
     border-color: black;
     background-color: lightpink;
@@ -139,15 +145,6 @@ h3 {
 .update-new, 
 .previous-posts {
     margin-top: 12px;
-}
-
-.previous-links {
-    text-decoration: none;
-    color: black;
-}
-
-.previous-links:hover {
-    color: lightpink
 }
 
 footer {
