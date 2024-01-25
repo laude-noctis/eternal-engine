@@ -1,15 +1,16 @@
 <div class="container">
-    <div>
+    <div class="dashboard">
         <h2>Welcome, {{username}}</h2>
         <a href="/new-post"><button id="new-post">+New Post</button></a>
     </div>
 
     <div>
         {{#if blogPosts.length}}
-        <div>
+        <div class="card-body previous">
+            <h2 class="card-title">Previous Posts</h2>
             {{#each blogPosts as |blogPost|}}
-            <div class="container">
-                <h4><a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a></h4>
+            <div class="container previous-posts">
+                <h4><a class="previous-links" href="/blogposts/{{blogPost.id}}">~ {{blogPost.title}}</a></h4>
             </div>
             {{/each}}
         </div>
