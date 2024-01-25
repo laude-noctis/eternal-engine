@@ -1,13 +1,13 @@
 <div>
-    <div class="container user-btns">
-        {{#if isCurrentUser}}
-        <div>
-            <a href="/update/{{id}}"><button id="edit-post">Edit Post</button></a>
-        </div>
-        <div>
-            <button id="delete-button" data-id="{{id}}">DELETE</button>
-        </div>
-        {{/if}}
+    <div class="button-container container">
+            {{#if isCurrentUser}}
+            <div>
+                <a href="/update/{{id}}"><button class="users-btns" id="edit-post">Edit Post</button></a>
+            </div>
+            <div>
+                <button class="users-btns" id="delete-button" data-id="{{id}}">DELETE</button>
+            </div>
+            {{/if}}
     </div>
 
     <div class="container">
@@ -18,15 +18,15 @@
         </div>
     </div>
 
+    {{#each comments as |blogComment|}}
     <div class="container">
         <div class="card-body">
-            {{#each comments as |blogComment|}}
             <h2 class="card-title">{{blogComment.user.username}}</h2>
             <h3 class="card-subtitle mb-2">{{format_date date_created}}</h3>
             <p class="card-text description">{{blogComment.comment}}</p>
-            {{/each}}
         </div>
     </div>
+    {{/each}}
 
     <div class="container">
         <div class="card-body">

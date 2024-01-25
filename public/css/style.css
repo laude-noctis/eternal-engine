@@ -1,5 +1,5 @@
 * {
-    background-color: white;
+    background-color: rgb(237, 230, 255);
     font-family: "Merriweather", serif;
 }
 
@@ -12,8 +12,12 @@
     font-style: bold;
     text-decoration: none;
     font-size: 36px;
-    margin-left: 15px;
+    margin: 0px 0px 0px 20px;
     color: black;
+}
+
+header {
+    background-color: darkcyan;
 }
 
 header nav a,
@@ -66,6 +70,18 @@ h3 {
     background-color: rgb(112, 25, 173);
     color: white;
     border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.users-btns {
+    display: inline-flex;
+    align-items: end;
+    margin: 12px 0px;
 }
 
 footer {

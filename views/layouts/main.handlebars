@@ -17,7 +17,7 @@
 <body>
     <div>
         <header class="container-fluid">
-            <nav class="navbar sticky-top bg-body-tertiary">
+            <nav class="navbar bg-body-tertiary">
                 {{#if logged_in}}
                 <div class="container-fluid">
                     <a href="/">Home</a>
@@ -31,8 +31,8 @@
                     <a href="/login">Login</a>
                 </div>
                 {{/if}}
-                <a href="/" id="tech-blog">The Tech Blog</a>
             </nav>
+                <a href="/" id="tech-blog">The Tech Blog</a>
         </header>
         <main>
             {{{ body }}}
