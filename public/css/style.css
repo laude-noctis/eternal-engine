@@ -99,15 +99,17 @@ h3 {
     background-color: lightpink;
 }
 
-.login-signup-btn {
+.submit-btn {
     margin-bottom: 12px;
     background-color: darkcyan;
+    color: lightgray;
     border-radius: 8px;
     border-color: black;
 }
 
-.login-signup-btn:hover {
+.submit-btn:hover {
     background-color: rgb(0, 180, 180);
+    color: black;
 }
 
 #new-post,
@@ -118,6 +120,14 @@ h3 {
     background-color: lightpink;
 }
 
+.users-btns:hover,
+#new-post:hover,
+.instead-btn:hover {
+    border-radius: 8px;
+    border-color: black;
+    background-color: lightcoral;
+}
+
 .dashboard {
     margin-bottom: 16px;
 }
@@ -126,6 +136,7 @@ h3 {
     border: none;
 }
 
+.update-new, 
 .previous-posts {
     margin-top: 12px;
 }
